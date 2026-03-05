@@ -1,0 +1,72 @@
+calculations:
+- mode: ts
+  element:
+  - Cu
+  mass:
+  - 63.546
+  #lattice: /pc2/users/u/usrtr104/solid.data
+  lattice: fcc
+  repeat: [5,5,5]
+  temperature: [1200, 1400]
+  pressure: 0
+  pair_coeff: '* * /pc2/users/u/usrtr104/.cache/grace/GRACE-1L-OMAT Cu'
+  pair_style: grace
+  reference_phase: solid
+  n_equilibration_steps: 1000
+  n_iterations: 1
+  n_switching_steps: 1000
+  queue:
+    commands:
+    - '#SBATCH -A hpc-prf-mlpfits'
+    - '#SBATCH -N 1'
+    - '#SBATCH --gres=gpu:a100:1'
+    - '#SBATCH --cpus-per-task=12'
+    - '#SBATCH --ntasks-per-node=1'
+    - source /pc2/users/u/usrtr200/load_calphy.sh
+    - module load system/CUDA/13.0.0
+    cores: 1
+    queuename: gpu
+    scheduler: slurm
+    walltime: 02:00:00
+  #these are simply for speeding up, and not needed!
+  md:
+    n_small_steps: 1000
+  tolerance:
+    pressure: 100
+  equilibration_control: berendsen
+  spring_constants: [2.872]
+
+- mode: ts
+  element:
+  - Cu
+  mass:
+  - 63.546
+  lattice: /pc2/users/u/usrtr104/liquid.data
+  temperature: [1200, 1400]
+  pressure: 0
+  pair_coeff: '* * /pc2/users/u/usrtr104/.cache/grace/GRACE-1L-OMAT Cu'
+  pair_style: grace
+  reference_phase: liquid
+  n_equilibration_steps: 1000
+  n_iterations: 1
+  n_switching_steps: 1000
+  
+  queue:
+    commands:
+    - '#SBATCH -A hpc-prf-mlpfits'
+    - '#SBATCH -N 1'
+    - '#SBATCH --gres=gpu:a100:1'
+    - '#SBATCH --cpus-per-task=12'
+    - '#SBATCH --ntasks-per-node=1'
+    - source /pc2/users/u/usrtr200/load_calphy.sh
+    - module load system/CUDA/13.0.0
+    cores: 1
+    queuename: gpu
+    scheduler: slurm
+    walltime: 02:00:00
+  #these are simply for speeding up, and not needed!
+  melting_cycle: False
+  md:
+    n_small_steps: 1000
+  tolerance:
+    pressure: 100
