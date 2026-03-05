@@ -27,7 +27,7 @@ calculations:
     cores: 1
     queuename: gpu
     scheduler: slurm
-    walltime: 02:00:00
+    walltime: 00:15:00
   #these are simply for speeding up, and not needed!
   md:
     n_small_steps: 1000
@@ -63,7 +63,7 @@ calculations:
     cores: 1
     queuename: gpu
     scheduler: slurm
-    walltime: 02:00:00
+    walltime: 00:15:00
   #these are simply for speeding up, and not needed!
   melting_cycle: False
   md:

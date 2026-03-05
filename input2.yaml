@@ -31,7 +31,7 @@ calculations:
     cores: 1
     queuename: gpu
     scheduler: slurm
-    walltime: 02:00:00
+    walltime: 00:15:00
   folder_prefix: x10
   #these are simply for speeding up, and not needed!
   equilibration_control: berendsen
@@ -72,7 +72,7 @@ calculations:
     cores: 1
     queuename: gpu
     scheduler: slurm
-    walltime: 02:00:00
+    walltime: 00:15:00
   folder_prefix: x20
   #these are simply for speeding up, and not needed!
   equilibration_control: berendsen
