@@ -11,10 +11,10 @@ calculations:
     output_chemical_composition:
       Ag: 450
       Cu: 50
-  lattice: /pc2/users/u/usrtr104/solid.data
+  lattice: solid.data
   temperature: 800
   pressure: 0
-  pair_coeff: '* * /pc2/users/u/usrtr104/.cache/grace/GRACE-1L-OMAT Ag Cu'
+  pair_coeff: '* * /pc2/users/u/$USER/.cache/grace/GRACE-1L-OMAT Ag Cu'
   pair_style: grace
   n_equilibration_steps: 1000
   n_iterations: 1
@@ -52,10 +52,10 @@ calculations:
     output_chemical_composition:
       Ag: 400
       Cu: 100
-  lattice: /pc2/users/u/usrtr104/solid.data
+  lattice: solid.data
   temperature: 800
   pressure: 0
-  pair_coeff: '* * /pc2/users/u/usrtr104/.cache/grace/GRACE-1L-OMAT Ag Cu'
+  pair_coeff: '* * /pc2/users/u/$USER/.cache/grace/GRACE-1L-OMAT Ag Cu'
   pair_style: grace
   n_equilibration_steps: 1000
   n_iterations: 1

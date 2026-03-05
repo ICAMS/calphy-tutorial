@@ -9,7 +9,7 @@ calculations:
   repeat: [5,5,5]
   temperature: [1200, 1400]
   pressure: 0
-  pair_coeff: '* * /pc2/users/u/usrtr104/.cache/grace/GRACE-1L-OMAT Cu'
+  pair_coeff: '* * /pc2/users/u/$USER/.cache/grace/GRACE-1L-OMAT Cu'
   pair_style: grace
   reference_phase: solid
   n_equilibration_steps: 1000
@@ -22,7 +22,7 @@ calculations:
     - '#SBATCH --gres=gpu:a100:1'
     - '#SBATCH --cpus-per-task=12'
     - '#SBATCH --ntasks-per-node=1'
-    - source /pc2/users/u/usrtr200/load_calphy.sh
+    - source /pc2/users/u/$USER/load_calphy.sh
     - module load system/CUDA/13.0.0
     cores: 1
     queuename: gpu
@@ -41,10 +41,10 @@ calculations:
   - Cu
   mass:
   - 63.546
-  lattice: /pc2/users/u/usrtr104/liquid.data
+  lattice: liquid.data
   temperature: [1200, 1400]
   pressure: 0
-  pair_coeff: '* * /pc2/users/u/usrtr104/.cache/grace/GRACE-1L-OMAT Cu'
+  pair_coeff: '* * /pc2/users/u/$USER/.cache/grace/GRACE-1L-OMAT Cu'
   pair_style: grace
   reference_phase: liquid
   n_equilibration_steps: 1000
@@ -58,7 +58,7 @@ calculations:
     - '#SBATCH --gres=gpu:a100:1'
     - '#SBATCH --cpus-per-task=12'
     - '#SBATCH --ntasks-per-node=1'
-    - source /pc2/users/u/usrtr200/load_calphy.sh
+    - source /pc2/users/u/$USER/load_calphy.sh
     - module load system/CUDA/13.0.0
     cores: 1
     queuename: gpu
